@@ -11,26 +11,26 @@ visual_studio_2015_aka_14_task:
     - cl /EHsc test.c
     - test.exe
 
-# This way of selecting the MSYSTEM and C runtime is based on:
+# Clues about selecting the C runtime from:
 # https://www.msys2.org/docs/ci/
 # https://www.msys2.org/docs/environments/
 
 mingw_ucrt_task:
   env:
     BASH: C:\msys64\usr\bin\bash.exe
-    MSYSTEM: UCRT
-  system_info_script:
-    - %BASH% -lc 'gcc --version'
-  test_script:
-    - %BASH% -lc 'gcc test.c -o test'
-    - %BASH% -lc 'test.exe'
+    MSYSTEM: UCRT64
+  system_info_script: |
+    %BASH% -lc 'gcc --version'
+  test_script: |
+    %BASH% -lc 'gcc test.c -o test'
+    %BASH% -lc 'test.exe'
 
 mingw_msvcrt_task:
   env:
     BASH: C:\msys64\usr\bin\bash.exe
     MSYSTEM: MINGW64
-  system_info_script:
-    - %BASH% -lc 'gcc --version'
-  test_script:
-    - %BASH% -lc 'gcc test.c -o test'
-    - %BASH% -lc 'test.exe'
+  system_info_script: |
+    %BASH% -lc 'gcc --version'
+  test_script: |
+    %BASH% -lc 'gcc test.c -o test'
+    %BASH% -lc 'test.exe'
