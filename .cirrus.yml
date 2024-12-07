@@ -13,5 +13,5 @@ visual_studio_2015_aka_14_task:
 
 mingw_task:
   setup_script:
-    - C:\tools\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -S --needed mingw-w64-x86_64-gcc"
+    - gcc --version
 
