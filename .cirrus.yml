@@ -3,36 +3,41 @@ windows_container:
 
 visual_studio_2013-aka_12_task:
   script:
-    - "C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC/vcvarsall.bat x86"
+    - cd "C:/Program Files (x86)/Microsoft Visual Studio 12.0/VC"
+    - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
-visual_studio_2015-aka_14_task:
+visual_studio_2015_aka_14_task:
   script:
-    - "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/vcvarsall.bat x86"
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC"
+    - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
-visual_studio_2017-aka_15_task:
+visual_studio_2017_aka_15_task:
   script:
-    - "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Auxiliary/Build/vcvarsall.bat x86"
+    - cd "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Auxiliary/Build"
+    - vcvarsall.bat x86
     - vcvarsall x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
-visual_studio_2019-aka_16_task:
+visual_studio_2019_aka_16_task:
   script:
-    - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build/vcvarsall.bat x86"
+    - cd "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build"
+    - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
-visual_studio_2022-aka_17_task:
+visual_studio_2022_aka_17_task:
   script:
-    - "C:/Program Files (x86)/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat x86"
+    - cd "C:/Program Files (x86)/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build"
+    - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
