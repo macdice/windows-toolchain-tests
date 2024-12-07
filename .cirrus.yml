@@ -4,14 +4,19 @@ windows_container:
 visual_studio_2015_aka_14_task:
   system_info_script:
     - systeminfo
-  script:
+  test_script:
     - cd "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC"
     - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
-mingw_task:
-  setup_script:
+mingw_msvcrt_task:
+  system_info_script:
+    - systeminfo
     - gcc --version
+  test_script:
+    - gcc -mcrtdll=msvcrt test.c -o test
+    - text.exe
+
 
