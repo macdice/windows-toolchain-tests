@@ -6,7 +6,7 @@ int main()
 {
 	printf("is _UCRT defined?  ");
 #ifdef _UCRT
-	printf("yes, value %d\n", _UCRT);
+	printf("yes: ", _UCRT);
 #else
 	printf("no\n");
 #endif
