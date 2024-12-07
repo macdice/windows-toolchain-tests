@@ -16,8 +16,5 @@ mingw_task:
   system_info_script:
     - C:\tools\msys64\usr\bin\bash -lc 'printenv'
   script:
-    - vcvarsall.bat x86
-    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
-    - cl /EHsc test.c
-    - test.exe
+    - mingw32.exe
 
