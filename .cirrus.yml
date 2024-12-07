@@ -1,9 +1,41 @@
 windows_container:
   image: cirrusci/windowsservercore:cmake
 
-visual-studio-2015-aka-14_task:
+visual_studio_2013-aka_12_task:
+  script:
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 12.0/VC"
+    - vcvarsall x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
+
+visual_studio_2015-aka_14_task:
   script:
     - cd "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC"
+    - vcvarsall x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
+
+visual_studio_2017-aka_15_task:
+  script:
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 15.0/VC"
+    - vcvarsall x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
+
+visual_studio_2019-aka_16_task:
+  script:
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 16.0/VC"
+    - vcvarsall x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
+
+visual_studio_2022-aka_17_task:
+  script:
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 17.0/VC"
     - vcvarsall x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
