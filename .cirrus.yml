@@ -11,13 +11,20 @@ visual_studio_2015_aka_14_task:
     - cl /EHsc test.c
     - test.exe
 
+mingw_ucrt_task:
+  system_info_script:
+    - systeminfo
+    - gcc --version
+  test_script:
+    - gcc test.c -lucrt -o test
+    - test.exe
+
 mingw_msvcrt_task:
   system_info_script:
     - systeminfo
     - gcc --version
-    - gcc -dumpspecs
   test_script:
-    - gcc test.c -lucrt -o test
-    - text.exe
+    - gcc test.c -lmsvcrt -o test
+    - test.exe
 
 
