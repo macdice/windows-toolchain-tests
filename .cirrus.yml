@@ -12,6 +12,7 @@ visual_studio_2015_aka_14_task:
     - test.exe
 
 mingw_task:
+  os_version: 2019
   system_info_script:
     - C:\tools\msys64\usr\bin\bash -lc 'printenv'
   script:
