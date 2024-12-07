@@ -1,0 +1,10 @@
+windows_container:
+  image: cirrusci/windowsservercore:cmake
+
+visual-studio-2015-aka-14_task:
+  script:
+    - cd "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC"
+    - vcvarsall x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
