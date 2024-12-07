@@ -4,7 +4,14 @@
 
 int main()
 {
-	printf("does _configthreadlocale() work? ... ");
+	printf("is _UCRT defined?  ");
+#ifdef _UCRT
+	printf("yes, value %d\n", _UCRT);
+#else
+	printf("no\n");
+#endif
+
+	printf("does _configthreadlocale() work?  ");
 	printf(_configthreadlocale(_ENABLE_PER_THREAD_LOCALE) == -1 ? "no\n" : "yes\n");
 
     return 0;

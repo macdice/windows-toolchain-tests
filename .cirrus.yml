@@ -16,7 +16,7 @@ mingw_ucrt_task:
     - systeminfo
     - gcc --version
   test_script:
-    - gcc test.c -lucrt -o test
+    - gcc test.c -o test
     - test.exe
 
 mingw_msvcrt_task:
