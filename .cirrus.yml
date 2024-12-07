@@ -1,5 +1,5 @@
 windows_container:
-  image: cirrusci/windowsservercore:cmake
+  image_family: pg-ci-windows-ci
 
 visual_studio_2015_aka_14_task:
   system_info_script:
