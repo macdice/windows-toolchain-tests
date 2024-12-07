@@ -2,12 +2,21 @@ windows_container:
   image: cirrusci/windowsservercore:cmake
 
 visual_studio_2015_aka_14_task:
-  script:
+  system_info_script:
     - systeminfo
+  script:
     - cd "c:/Program Files (x86)/Microsoft Visual Studio 14.0/VC"
     - vcvarsall.bat x86
     - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
     - cl /EHsc test.c
     - test.exe
 
+mingw_task:
+  system_info_script:
+    - C:\tools\msys64\usr\bin\bash -lc 'printenv'
+  script:
+    - vcvarsall.bat x86
+    - cd C:/Users/ContainerAdministrator/AppData/Local/Temp/cirrus-ci-build
+    - cl /EHsc test.c
+    - test.exe
 
