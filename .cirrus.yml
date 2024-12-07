@@ -15,8 +15,9 @@ mingw_msvcrt_task:
   system_info_script:
     - systeminfo
     - gcc --version
+    - gcc -dumpspecs
   test_script:
-    - gcc -mcrtdll=ucrt test.c -o test
+    - gcc test.c -lucrt -o test
     - text.exe
 
 
